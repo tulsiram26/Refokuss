@@ -31,7 +31,7 @@ const Stripes = () => {
   return(
     <div className='flex items-start mt-20'>
       {data.map((elem, index) => (
-        <Stripe val={elem} />
+        <Stripe key={index} val={elem} />
       ))}
     </div>
   );
