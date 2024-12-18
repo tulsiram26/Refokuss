@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
-function Stripe({val}) {
-    return (
-      <div className='w-[16.66%] px-10 py-5 border-t-[1.2px] border-b border-r flex items-center justify-between border-zinc-600'>
-        <img src={val.url} alt="logo" />
-        <span className='font-semibold'>{val.number}</span>
-      </div>
-    );
-  }
+function Strip({item}) {
+  return (
+    <div className="w-[16.66%] px-4 py-3 border-t-[1.2px] border-r-[1.2px] border-b-[1.2px] border-zinc-500 flex justify-between items-center">
+      <img className="w-24" src={item.url} alt="" />
+      <span className="text-zinc-100 font-semibold">{item.no}</span>
+    </div>
+  );
+}
 
-export default Stripe
+export default Strip;

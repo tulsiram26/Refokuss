@@ -2,30 +2,32 @@ import { motion } from "framer-motion";
 import React from "react";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
-function Card({ width, start, para, hover="false"}) {
+
+function Card({ width, start, para, hover="false" }) {
   return (
-    <motion.div whileHover={{backgroundColor: hover ==="true" && "#7443ff", padding:"25px"}} className={` bg-zinc-800 p-5 rounded-xl  ${width} min-h-[30rem] flex flex-col justify-between`}>
-      <div className="w-full">
-        <div className="w-full flex justify-between itmes-center">
-          <h3>One Heading</h3>
+    <motion.div whileHover={{background: hover=== true && "#7443ff" , padding:"25px"}} className={`${width}   bg-zinc-800 rounded-xl my-10  p-5 flex flex-col justify-between h-[25rem]`}>
+      <div>
+        <div className="w-full flex justify-between items-center">
+          <h3>Whatever heading</h3>
           <IoIosArrowRoundForward />
         </div>
-        <h1 className="text-3xl font-medium mt-5">Whatever heading.</h1>
+        <div className="w-full ">
+        <h1 className="text-2xl font-medium mt-10">what they say</h1>
       </div>
-      <div className="down w-full">
-        {start === true && (
-          <>
-            <h1 className="text-6xl font-semibold tracking-tight leading-none">
-              Start a Project
-            </h1>
-            <button className="rounded-full mt-5 py-2 px-5 border-[1px] border-zinc-50">
-              Contact Us
+      </div>
+      
+      <div className="">
+        {start && (
+          <div>
+            <h1 className="text-7xl font-semibold tracking-tight leading-none">Start Project </h1>
+            <button className="border-[1px] rounded-full border-zinc-500 py-1 px-4 mt-5">
+              Contact us
             </button>
-          </>
+          </div>
         )}
         {para && (
-            <p className="text-sm text-zinc-500 font-medium">
-            Lorem ipsum dolor sit amet consectetur adipisicing.
+          <p className="text-zinc-500 ">
+            Lorem ipsum dolor sit amet, consectetur adipisicing.
           </p>
         )}
       </div>

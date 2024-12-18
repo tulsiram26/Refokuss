@@ -1,40 +1,22 @@
 import React from 'react'
-import Stripe from './Stripe'
+import Strip from './Stripe'
 
-const Stripes = () => {
-    var data = [
-        {
-            url: "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/63c9ce90a51cd7cf6b3689fb_css-design-awards-logos-id1L9L8Yvp%201.svg",
-            number: 52,
-          },
-          {
-            url: "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/63d6e83420934a94d642103b_NCC2021_LogoLockup%201.svg",
-            number: 2,
-          },
-          {
-            url: "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/63c9ce90a51cd75d563689fd_Awwards-logotype-2018%201.svg",
-            number: 15,
-          },
-          {
-            url: "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/63c9ce90a51cd7cf6b3689fb_css-design-awards-logos-id1L9L8Yvp%201.svg",
-            number: 52,
-          },
-          {
-            url: "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/63d6e83420934a94d642103b_NCC2021_LogoLockup%201.svg",
-            number: 11,
-          },
-          {
-            url: "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/63c9ce90a51cd75d563689fd_Awwards-logotype-2018%201.svg",
-            number: 48,
-          }, 
+function Stripes() {
+    const data = [
+        {url:"https://cdn.prod.website-files.com/664dc8b6bc52b504509197f0/6697d486ac04cccf98e13fff_bcgp.svg", no:"2"},
+        {url:"https://cdn.prod.website-files.com/664dc8b6bc52b504509197f0/666359b997d53302df1b9075_63aeda082c152d7b32e74c9d_remind.svg", no:"11"},
+        {url:"https://cdn.prod.website-files.com/664dc8b6bc52b504509197f0/666359b62de955b9aa4d2dd0_64868959b481181dd14c03a2_Silvr_logo_white.png", no:"2"},
+        {url:"https://cdn.prod.website-files.com/664dc8b6bc52b504509197f0/666359b597d53302df1b88fc_660191edcdb42d79ba8c23aa_Logo.svg", no:"15"},
+        {url:"https://cdn.prod.website-files.com/664dc8b6bc52b504509197f0/666359b5b40b9966a3a112d7_663a6cbf194837f9c0affe8e_logo.svg", no:"16"},
+        {url:"https://cdn.prod.website-files.com/664dc8b6bc52b504509197f0/666359b850995827afaa8db9_63aed9b4493ff77bba5e9939_spotify.svg", no:"17"}
     ]
-  return(
-    <div className='flex items-start mt-20'>
-      {data.map((elem, index) => (
-        <Stripe key={index} val={elem} />
-      ))}
+  return (
+    <div className='flex mt-24'>
+          { data.map((elem, index)=>(
+            <Strip key={index} item={elem} />
+          ))}
     </div>
-  );
+  )
 }
 
 export default Stripes

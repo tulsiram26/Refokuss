@@ -1,100 +1,104 @@
 import React, { useState } from "react";
-// React
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 
 function Work() {
   const [images, setImages] = useState([
     {
-      url: "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/634ef09178195ce0073e38f3_Refokus%20Tools-1.png",
-      top: "50%",
-      left: "50%",
+      url: "https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      left: "49%",
+      top: "55%",
       isActive: false,
     },
     {
-      url: "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/634ef0accfe1b3e66bc55462_Refokus%20Tools.png",
-      top: "56%",
-      left: "44%",
-      isActive: false,
-    },
-    {
-      url: "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/634ef0acbc45cb2f4fc5c6b2_Yahoo.png",
-      top: "45%",
-      left: "56%",
-      isActive: false,
-    },
-    {
-      url: "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/634ef092455ce2cf591e52d1_Rainfall.png",
-      top: "60%",
+      url: "https://images.unsplash.com/photo-1455894127589-22f75500213a?q=80&w=1987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       left: "53%",
+      top: "52%",
       isActive: false,
     },
     {
-      url: "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/634ef0ac7e7179d210dc41f0_Summon.png",
-      top: "43%",
-      left: "40%",
+      url: "https://images.unsplash.com/photo-1453133451515-5ff7c1d0d63c?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      left: "47% ",
+      top: "53%",
       isActive: false,
     },
     {
-      url: "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/634ef0af108a465002975acd_Showcase%20Websites%20(1).png",
-      top: "65%",
-      left: "55%",
+      url: "https://images.unsplash.com/photo-1636081890206-b29817bfb178?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      left: "51%",
+      top: "60%",
+      isActive: false,
+    },
+    {
+      url: "https://images.unsplash.com/photo-1725347740937-7315b0bd3cc5?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      left: "45%",
+      top: "53%",
+      isActive: false,
+    },
+    {
+      url: "https://images.unsplash.com/photo-1725204038668-f67ccc690384?q=80&w=1895&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      left: "53%",
+      top: "66%",
       isActive: false,
     },
   ]);
 
   const { scrollYProgress } = useScroll();
 
-  scrollYProgress.on("change", (data) => {
-    function imagesShow(arr) {
-      setImages((prev) => // set images me gaye 
-        prev.map((item, index) => // har element ko map kr rahe h 
-          arr.indexOf(index) === -1 // jo array receive hua h blank array us blank array pe liya gaya h uska index , 
-            ? { ...item, isActive: false } // agar nhi mila toh show nhi hoga
-            : { ...item, isActive: true } // agar aa gaya toh show karega
-        )
-      );
-    }
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    const showImage = (arr)=>(
+         setImages((prev)=>(
+          prev.map((item, index)=>(
+            arr.indexOf(index) === -1 ? 
+            {...item, isActive:false}
+            : {...item, isActive:true}
+          ))  
+         ))
+    )
 
-    switch (Math.floor(data * 100)) { // scroll krne par jo value aa rha h use % me convert kiya hai
+    
+    switch (Math.floor(latest * 100)) {
       case 0:
-        imagesShow([]); // agar 0% hai toh blank array bheja h
+        showImage([])
         break;
       case 1:
-        imagesShow([0]);
-        break;
-      case 2:
-        imagesShow([0, 1]);
+        showImage([1])
         break;
       case 3:
-        imagesShow([0, 1, 2]);
+        showImage([1,2])
         break;
-      case 4:
-        imagesShow([0, 1, 2, 3]);
+      case 5:
+        showImage([1,2,3])
         break;
-      case 6:
-        imagesShow([0, 1, 2, 3, 4]);
+      case 7:
+        showImage([1,2,3,4])
         break;
-      case 8:
-        imagesShow([0, 1, 2, 3, 4, 5]);
+      case 9:
+        showImage([1,2,3,4,5])
+        break;
+      case 11:
+        showImage([1,2,3,4,5,6])
         break;
     }
   });
 
+  const showNhide = (scrollVal) => {
+    console.log(Math.floor(scrollVal * 100));
+  };
+
   return (
-    <div className="w-full mt-20">
-      <div className=" relative max-w-screen-xl mx-auto text-center">
-        <h1 className="text-[30vw] leading-none font-sm select-none tracking-tight">
+    <div className="w-full ">
+      <div className="max-w-screen-xl text-center mx-auto relative">
+        <h1 className="text-[28vw] text-zinc-100 font-mediam leading-none select-none">
           work
         </h1>
-        <div className="absolute top-0 w-full h-full">
+        <div className=" absolute top-0 w-full h-full ">
           {images.map(
-            (elem, index) =>
-              elem.isActive && (
+            (val, index) =>
+              val.isActive == true && (
                 <img
-                  className="absolute w-60 rounded-lg -translate-x-[50%] -translate-y-[50%]"
-                  src={elem.url}
                   key={index}
-                  style={{ top: elem.top, left: elem.left }}
+                  className="w-64 absolute -translate-x-[50%] -translate-y-[35%] "
+                  style={{ left: val.left, top: val.top }}
+                  src={val.url}
                   alt=""
                 />
               )

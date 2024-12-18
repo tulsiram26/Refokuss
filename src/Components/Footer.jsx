@@ -1,38 +1,39 @@
 import React from "react";
 
-const Footer = () => {
+function Footer() {
   return (
-    <div className="w-full">
-      <div className="max-w-screen-xl mx-auto py-10 flex gap-32">
-        <div className="basis-1/2 ">
-          <h1 className="text-[11.5rem] font-medium leading-none tracking-tight">
-            refokus.
-          </h1>
+    <div className="w-full text-white">
+      <div className="max-w-screen-lg mx-auto flex gap-10 ">
+        <div className="basis-1/2">
+          <h1 className="text-[10vw] font-semibold tracker-tight">refokus.</h1>
         </div>
-        <div className="basis-1/2 flex gap-4">
-          <div className="basis-1/3">
-            <h4 className="mb-10 text-zinc-500 capitalize">Socials</h4>
-            {["instagram", "twitter (x?)", "LinkedIn"].map((item, index) => (
-              <a key={index} className="block mt-2 capitalize text-zinc-600">{item}</a>
+        <div className="flex">
+          <div className="basis-1/3 ml-5 p-5 ">
+            <h1 className="text-zinc-500 mb-10">Social</h1>
+            {["Instagram", "Twitter (2x)", "LinkedIn"].map((val, index) => (
+              <h1 key={index} className="text-zinc-600 block mt-2">{val}</h1>
             ))}
           </div>
-          <div className="basis-1/3">
-            <h4 className="mb-10 text-zinc-500 capitalize">Socials</h4>
-            {["instagram", "twitter (x?)", "LinkedIn"].map((item, index) => (
-              <a key={index} className="block mt-2 capitalize text-zinc-600">{item}</a>
+          <div className="basis-1/3 ml-5 p-5 ">
+            <h1 className="text-zinc-500 mb-10">Social</h1>
+            {["Instagram", "Twitter (2x)", "LinkedIn"].map((val, index) => (
+              <h1 key={index} className="text-zinc-600 block mt-2">{val}</h1>
             ))}
           </div>
-          <div className="basis-1/2 flex flex-col items-end">
-            <p className="text-right">
-              Refokus is a pioneering digital agency driven by design and
-              empowered by technology
+          <div className="flex flex-col items-end basis-2/3 justify-end py-10">
+            <p className="text-right ">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio,
+              illo?
             </p>
-            <img src="https://assets-global.website-files.com/6334198f239547d0f9cd84b3/63455da11b54556c9d28aa3e_Badge-EnterprisePartner-Blue%201.svg" className="w-32 mt-10" alt="" />
+            <img
+              src="https://cdn.prod.website-files.com/664dc8b6bc52b504509197e4/66bd4a1138d6a32addf4b6b2_premium_partner_badge_enterprise_blue.webp"
+              alt=""
+            />
           </div>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default Footer;
